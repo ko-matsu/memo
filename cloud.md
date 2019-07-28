@@ -88,3 +88,6 @@ memo
     * 感覚的には、AD連携やOffice365連携が強みなのだろうと思う。
     * Windowsおよび.NET(C#)などとの連携については、間違いなく強そうである。
     * あとPower BI連携があるので、データ可視化も強いかもしれない。
+* 参考
+  * 企業のCloud移行について
+    * https://www.atmarkit.co.jp/ait/articles/1907/26/news021.html
