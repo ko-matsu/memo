@@ -91,3 +91,58 @@ memo
 * 参考
   * 企業のCloud移行について
     * https://www.atmarkit.co.jp/ait/articles/1907/26/news021.html
+
+* 対応表の最新版
+  * https://www.apps-gcp.com/gcp-aws-service-correspondence-comparison-2019-02/
+* 比較サイト
+  * https://cloud-textbook.com/category/vs/
+* VM比較
+  * https://cloud-textbook.com/46/
+  * 性能は高めだが、設定はシンプル。起動も早い。価格は若干安い。
+  * グローバルIPのみでの運用となる。
+* Storage比較
+  * https://cloud-textbook.com/48/
+  * 月額利用料金は若干安いが、Getリクエストの料金はAWSよりは高い。
+  * BigQueryとの連携可能。
+  * (欠点)SFTPは使用できない
+* Database比較
+  * https://cloud-textbook.com/50/
+  * RDBMS
+    * ほぼ変わらないが、細かな点では違いがあるので注意。
+    * DB移行の場合、GCPは種類(バージョンやアプリ)が少ないため注意。
+    * またカスタマイズの性能上限も低め。
+    * その分か、GCPは価格が安い。
+  * NoSQL
+    * 大量データ分析に Cloud Bigtable がある。
+    * これを機能を絞って使いやすくしたのがCloud Data Store。アプリ利用目的のNoSQLDBとなる
+    * さらに上記をモバイルアプリ向けにしたのがCloud Firestore。
+      * デバイス間でのデータ同期を容易にできるようにする。
+* Networking比較
+  * DNS
+    * https://cloud-textbook.com/58/
+      * 特徴として、他ネームサーバとのゾーン転送がある
+  * ロードバランサー
+    * https://daddytrevia.com/gcp/CloudLoadBalancing/
+      * 論理的な、ソフトウェアデザインによるロードバランサー。非常にシンプル。
+      * 性能はGoogleがNW制御に使っているだけあって高い。
+  * http://comparecloud.in/?fbclid=IwAR2UXuPCL-15NlaHaqhzp4SKPkcwnQX9JQGg1v3my-EGyo_MNEFN6S-sl1E
+* 管理機能比較
+  * https://qiita.com/watarin/items/d867dcfac9cfd62abbc0
+    * IAM
+      * ADと同じく階層構造となっている。
+      * インスタンスそのものに紐づくため、個別に設定が必要。
+      * 以下の図が分かりやすい。
+        * https://ameblo.jp/principia-ca/entry-12144854519.html
+    * Firewall Rule
+      * ACL
+        * 優先度順にマッチしたところで決まる方式
+        * （ネットワークのACLで一般的な方式）
+      * アタッチ
+        * VPC固有
+        * 個別のルールでターゲット（適用されるインスタンス）を限定したルールが作れる。
+        * タグとか、サービス アカウントとかで指定できる
+* VPC比較
+  * GCP は各プロジェクトを VPC で接続可能な共有 VPCという機能がある。
+  * ただし、組織アカウントが必要。
+  * https://qiita.com/sirotosiko/items/5dae7d6db523405a729d
+    * IAM含め、この図がわかりやすい。
