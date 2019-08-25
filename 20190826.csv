@@ -1,0 +1,71 @@
+﻿,AWS,Azure,GCP,
+機能(外部連携含),アラート通知：メール、EC2アクション？,アラート通知：メール、Webhook,"デフォルトでAWS EC2等を監視対象としてサポート。
+メール、SMS、GoogleCloudConsole、HipChat、Slack、PagerDuty、Webhook、Campfire などでアラート通知を受け取れる。
+
+基本的に、アプリ単体での収集はサポートしていない模様。VMやコンテナなどの環境に対してセットアップする。RDBMSなどの一部サーバー系ソフト向けは対応。",
+"メトリクスの種類
+（VM）","EC2標準メトリクス
+(インスタンスメトリクス)
+CPU使用率
+ディスクRead/Write状況
+送受信パケット/データ量
+(ステータスチェックメトリクス)
+StatusCheckFailed
+
+https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html","(VMのメトリクス)
+CPU割合
+課金対象の受信/送信ネットワーク
+ディスクread/writeバイト数
+ディスクread/write操作数/秒
+未使用/使用済みの CPU クレジット
+受信/送信ネットワーク合計
+（プレビュー項目は除外）
+
+その他は省略","指標値(Compute Engine)
+CPU使用率、予約済みコア数
+稼働時間
+ディスクRead/Write状況
+スロットルRead/Write状況
+送受信パケット/データ量
+ドロップされたパケット/データ量
+
+https://cloud.google.com/monitoring/api/metrics?hl=ja",
+表示ツール,"ダッシュボード
+
+単一だが、利用方法はいくつかある？
+https://rarejob-tech-dept.hatenablog.com/entry/2019/07/26/190000","メトリック表示サポート
+- Azure ダッシュボード
+- Workbooks
+
+ログのみ
+- Azure Monitor ビュー
+- Power BI
+- Grafana
+- 独自のカスタム アプリケーション
+
+https://docs.microsoft.com/ja-jp/azure/azure-monitor/visualizations","メトリック表示サポート
+- メトリクスエクスプローラ
+- ダッシュボード
+
+https://cloud.google.com/monitoring/charts/?hl=ja",
+ドキュメントの調べやすさ,△,○,△,
+Web上での利用例の多さ,○,△,○,
+所見,課金要素が異なる。,"ログ化した後の可視化手段多め。
+（Azureだけに限らないと思うが）
+","AWSもデフォルトの対象であるなど、機能性は高い。デフォルトでの外部連携が便利。
+リアルタイム監視に向いていそう。",
+,,,,
+感想,作り込めば何でも作れるものの、Cloudの利点は初期で連携サービスが用意されている点。,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
